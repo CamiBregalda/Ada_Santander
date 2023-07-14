@@ -1,3 +1,12 @@
+/*Maria tem uma frutaria e está com uma promoção para quem comprar mais de 10 frutas (do mesmo item). A tabela de preços com frutas com preços
+especias são: Pera, Laranja, Maçã, Tomate, Caqui. 
+
+Comprando qualquer fruta da promoção e levando acima de 10 frutas o preçoda unidade fica 1.25 cada. Caso uma pessoa leve uma quantidade inferior
+ou igual a 10, o preço individual da fruta fica em 1.45.
+
+Faça uma função que recebe a quantidade de frutas que o cliente está levando e calcule o valor final a ser pago. Arredondar o valor final da 
+compra para 2 casas deciamis.*/
+
 package Aula_2;
 
 import java.util.Scanner;
@@ -47,7 +56,7 @@ public class Exercicio_1 {
     }
     
     public static double calculoPreco(int quant){
-        if (quant < 10){
+        if (quant <= 10){
             return quant * 1.45;
         } else {
             return quant * 1.25;
