@@ -16,14 +16,12 @@ public class Exercicio_1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        int quantidade;
-        
         String[] frutas = {"Pera", "Laranja", "Maçã", "Tomate", "Caqui"};
         int[] quantidades = new int[frutas.length];
 
         for (int i=0 ; i < frutas.length; i++){
             System.out.println("Quantidade de "+ frutas[i]+ "s:");
-            quantidade = scanner.nextInt();
+            int quantidade = Utils.lerInt();
             quantidades[i] = quantidade;
         };
         
