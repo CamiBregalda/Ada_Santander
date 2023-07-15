@@ -9,12 +9,9 @@ compra para 2 casas deciamis.*/
 
 package Aula_2;
 
-import java.util.Scanner;
-
 public class Exercicio_1 {
     
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         
         String[] frutas = {"Pera", "Laranja", "Maçã", "Tomate", "Caqui"};
         int[] quantidades = new int[frutas.length];
@@ -28,9 +25,7 @@ public class Exercicio_1 {
         int totalFrutas = quantFrutas(quantidades);
         double totalPago = calculoFrutas(quantidades);
         mostrarResultados(totalFrutas, totalPago);
-        
-        
-        scanner.close();
+    
     }
     
     public static double calculoFrutas(int[] quantidades) {
