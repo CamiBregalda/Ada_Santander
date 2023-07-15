@@ -17,7 +17,7 @@ public class Exercicio_1 {
         int[] quantidades = new int[frutas.length];
 
         for (int i=0 ; i < frutas.length; i++){
-            System.out.println("Quantidade de "+ frutas[i]+ "s:");
+            System.out.print("Quantidade de "+ frutas[i]+ "s: ");
             int quantidade = Utils.lerInt();
             quantidades[i] = quantidade;
         };
