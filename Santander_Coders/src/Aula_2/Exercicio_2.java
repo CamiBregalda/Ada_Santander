@@ -20,9 +20,9 @@ public class Exercicio_2 {
         for (int i = 0; i < array.length; i++) {
             for (int j = i + 1; j < array.length; j++) {
                 if (array[i] > array[j]) {
-	                int temp = array[i];
+	                int aux = array[i];
 	                array[i] = array[j];
-	                array[j] = temp;
+	                array[j] = aux;
 	            }
             }
         }
@@ -33,15 +33,17 @@ public class Exercicio_2 {
     public static int[] sortDescendingOrder(int[] numeros){
         int[] array = numeros.clone();
         
-	    for (int i = 0; i < array.length; i++) {
-	        for (int j = i + 1; j < array.length; j++) {
-	            if (array[i] < array[j]) {
-	                int temp = array[i];
-	                array[i] = array[j];
-	                array[j] = temp;
-	            }
+	for (int i = 0; i < array.length; i++) {
+            //-i pois o último valor já se tem certeza que é o correto, então não é necessário verificá-lo novamente
+            for (int j = 0; j < array.length - 1 - i; j++) {
+	        if (array[j] < array[j + 1]) {
+	            int aux = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = aux;
 	        }
 	    }
-	    return array;
+	}
+            
+	return array;
     }
 }
