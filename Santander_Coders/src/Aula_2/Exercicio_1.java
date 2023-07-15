@@ -5,7 +5,7 @@ Comprando qualquer fruta da promoção e levando acima de 10 frutas o preçoda u
 ou igual a 10, o preço individual da fruta fica em 1.45.
 
 Faça uma função que recebe a quantidade de frutas que o cliente está levando e calcule o valor final a ser pago. Arredondar o valor final da 
-compra para 2 casas deciamis.*/
+compra para 2 casas decimais.*/
 
 package Aula_2;
 
