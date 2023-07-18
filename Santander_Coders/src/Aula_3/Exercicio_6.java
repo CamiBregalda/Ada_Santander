@@ -14,12 +14,11 @@ public class Exercicio_6 {
         System.out.println("Digite o valor do 3º lado do triângulo: ");
         double c = entradaDados();
         
-        boolean verificacao = verificaDesigualdadeTriangular(a, b, c);
-        if (verificacao == true){
-            double area = calcularArea(a, b, c);
-            System.out.printf("A área do triângulo é %.2f cm2.\n", area);
-        } else {
+        double area = calcularArea(a, b, c);
+        if (area == 0){
             System.out.println("O referido triângulo atende as condições de desigualdade triangular.");
+        } else {
+            System.out.printf("A área do triângulo é %.2f cm2 e ele não atende as condições de desigualdade triangular.\n", area);
         }
         
     }
@@ -32,12 +31,12 @@ public class Exercicio_6 {
     }
     
     public static double calcularArea(double a, double b, double c){
-        boolean verificacao = verificaDesigualdadeTriangular(a, b, c);
-        
-        double p = (a + b + c) / 2;
-        double area  = Math.sqrt(p * (p - a) * (p - b) * (p - c));
-        
-        return area;
+        if (verificaTriangulo(a, b, c)){
+            double p = (a + b + c) / 2;
+            double area = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+            return area;
+        }
+        return 0;
     }
 
     public static boolean verificaDesigualdadeTriangular(double a, double b, double c) {
