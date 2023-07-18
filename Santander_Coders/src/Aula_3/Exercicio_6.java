@@ -14,11 +14,11 @@ public class Exercicio_6 {
         System.out.println("Digite o valor do 3º lado do triângulo: ");
         double c = entradaDados();
         
-        double area = calcularArea(a, b, c);
-        if (area == 0){
-            System.out.println("O referido triângulo atende as condições de desigualdade triangular.");
-        } else {
+        try{
+            double area = calcularArea(a, b, c);
             System.out.printf("A área do triângulo é %.2f cm2 e ele não atende as condições de desigualdade triangular.\n", area);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Lados inválidos, ou seja, o referido triângulo atende as condições de desigualdade triangular.");
         }
         
     }
@@ -40,7 +40,11 @@ public class Exercicio_6 {
     }
 
     public static boolean verificaDesigualdadeTriangular(double a, double b, double c) {
-        return (a < b + c) && (b < a + c) && (c < a + b) && (a > Math.abs(b - c)) && (b > Math.abs(a - c)) && (c > Math.abs(a - b));
+        if ((a < b + c) && (b < a + c) && (c < a + b) && (a > Math.abs(b - c)) && (b > Math.abs(a - c)) && (c > Math.abs(a - b))){
+            return true;
+        } else {
+            throw new IllegalArgumentException();
+        }
     }
     
 }
