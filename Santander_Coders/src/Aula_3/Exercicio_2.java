@@ -8,6 +8,9 @@ impostos, seguindo essa ordem. Realize o arredondamento para duas casas decimais
 
 package Aula_3;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public class Exercicio_2 {
     
     public static void main(String[] args) {
@@ -26,7 +29,10 @@ public class Exercicio_2 {
         double percentualDistribuidor = (custoDistribuidor / precoFinal) * 100;
         double percentualImpostos = (custoImpostos / precoFinal) * 100;
         
-        double[] result = {Math.round(percentualDistribuidor * 100.0) / 100.0, Math.round(percentualImpostos * 100.0) / 100.0};
+        double percentualExatoDistribuidor = new BigDecimal(percentualDistribuidor * 100.0 / 100.0).setScale(3, RoundingMode.DOWN).setScale(2, RoundingMode.HALF_DOWN).doubleValue();
+        double percentualExatoImpostos = new BigDecimal(percentualImpostos * 100.0 / 100.0).setScale(3, RoundingMode.DOWN).setScale(2, RoundingMode.HALF_DOWN).doubleValue();
+        
+        double[] result = {percentualExatoDistribuidor, percentualExatoImpostos};
         
         return result;
     }
