@@ -1,4 +1,5 @@
-/**/
+/*Crie uma função que receberá um array com três valores que correspondem a possíveis lados de um triângulo. Na função, validar se os dados fornecidos 
+formam um triângulo e então mostrar a área do triângulo através da Fórmula de Heron.*/
 
 package Aula_4;
 
