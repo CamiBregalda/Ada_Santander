@@ -59,5 +59,7 @@ formam um triângulo.</p>
 
 <p align="justify">OBS: para formar um triângulo, o valor de cada lado deve ser menor que a soma dos outros 2 lados.</p>
 
+<hr>
+
 <p align="justify"><b>8 -  </b>Crie uma função que receberá um array com três valores que correspondem a possíveis lados de um triângulo. Na função, validar se os dados fornecidos 
 formam um triângulo e então mostrar a área do triângulo através da Fórmula de Heron.</p>
