@@ -35,7 +35,7 @@ public class Exercicio_1 {
                 quantidades[i] = quantidade;
             } catch (QuantidadeInvalidaException e) {
                 System.out.println(e.getMessage());
-                System.out.println("Repita o processo:");
+                System.out.println("\nRepita o processo:");
                 i--;
             }
         }
@@ -85,8 +85,10 @@ public class Exercicio_1 {
     /*Criação das exceptions*/
     
     public static void validarQuantidade(int quantidade) throws QuantidadeInvalidaException{
-        if(quantidade <= 0){
-            throw new QuantidadeInvalidaException("É impossível comprar " + quantidade + " frutas.");
-        }
+        if(quantidade < 0){
+            throw new QuantidadeInvalidaException("A quantidade de itens fornecida é inválida.\nÉ impossível comprar " + quantidade + " frutas.");
+        } else if (quantidade == 0){
+            throw new QuantidadeInvalidaException("Não é possivel realizar um pedido sem itens.");
+        } 
     }
 }
