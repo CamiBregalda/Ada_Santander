@@ -1,11 +1,19 @@
-/*Maria tem uma frutaria e está com uma promoção para quem comprar mais de 10 frutas (do mesmo item). A tabela de preços com frutas com preços
+/*Enunciado anterior: Maria tem uma frutaria e está com uma promoção para quem comprar mais de 10 frutas (do mesmo item). A tabela de preços com frutas com preços
 especias são: Pera, Laranja, Maçã, Tomate, Caqui. 
 
 Comprando qualquer fruta da promoção e levando acima de 10 frutas o preçoda unidade fica 1.25 cada. Caso uma pessoa leve uma quantidade inferior
 ou igual a 10, o preço individual da fruta fica em 1.45.
 
 Faça uma função que recebe a quantidade de frutas que o cliente está levando e calcule o valor final a ser pago. Arredondar o valor final da 
-compra para 2 casas deciamis.*/
+compra para 2 casas deciamis.
+
+---
+
+Melhore o exercicio de calculo de frutas com desconto realizado anteriormente.
+
+Crie uma exception, que será lançada quando a quantidade de frutas no pedido for 0(zero) e informe para o usuário que não é possivel realizar um pedido sem itens.
+Em seguida crie uma segunda exception que será lançada quando a quantidade de frutas no pedido for negativa e informe para o usuário que a quantidade de itens 
+fornecidos é inváilido.*/
 
 package Aula_5;
 
@@ -77,10 +85,8 @@ public class Exercicio_1 {
     /*Criação das exceptions*/
     
     public static void validarQuantidade(int quantidade) throws QuantidadeInvalidaException{
-        if(quantidade < 0){
+        if(quantidade <= 0){
             throw new QuantidadeInvalidaException("É impossível comprar " + quantidade + " frutas.");
-        } else if (quantidade == 0){
-            throw new QuantidadeInvalidaException("Não é possível comprar 0 frutas");
         }
     }
 }
