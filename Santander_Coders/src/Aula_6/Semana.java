@@ -31,6 +31,6 @@ public enum Semana {
     }
     
     public String toString() {
-        return "Semana." + this.name(); // Concatena "Semana." antes do nome da enumeração
+        return "Semana." + this.name(); // Concatena "Semana." antes do nome
     }
 }
