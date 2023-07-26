@@ -21,13 +21,12 @@ public enum Semana {
     }
     
     public static Semana mostrarNomeEnum(String nome) {
-        for (int i = 0; i < Semana.values().length; i++) {
-            Semana semana = Semana.values()[i];
+        for (Semana semana : Semana.values()) {
             if (semana.nome.equalsIgnoreCase(nome)) {
                 return semana;
             }
         }
-        return null;
+        throw new IllegalArgumentException("\nNome inválido: " + nome);
     }
     
     public String toString() {
