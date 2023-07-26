@@ -12,9 +12,11 @@ public class Exercicio_3 {
         Semana diaDaSemana = Semana.mostrarNomeEnum("sábado");
         
         if (diaDaSemana != null) {
-            System.out.println(diaDaSemana);
-        } else {
-            System.out.println("Dia inválido.");
+            try {
+                System.out.println(diaDaSemana);
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+            }
         }
     }
  
