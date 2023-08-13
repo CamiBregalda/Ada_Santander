@@ -1,41 +1,62 @@
-package Aula_4.Repository;
+package Repository;
 
-import Aula_4.Dominio.Restaurante;
-import Aula_4.Dominio.Prato;
-import Aula_4.Dominio.Pedido;
+import Entity.Prato;
+import Entity.Restaurante;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public class Data {
+public class RestauranteRepository {
                    //<Nome, Restaurante>
-    private static Map<String, Restaurante> listaRestaurantes = new HashMap<>();
-    private static Map<String, Prato> listaPratos = new HashMap<>();
-    private static List<Pedido> listaPedidos = new ArrayList<>();
+    private static Map<Integer, Restaurante> listaRestaurantes;
+
+    public RestauranteRepository(){
+        this.listaRestaurantes = new HashMap<>();
+    }
 
     public static void adicionarRestaurante(Restaurante restaurante){
-        listaRestaurantes.put(restaurante.getNome(), restaurante);
+        listaRestaurantes.put(restaurante.getId(), restaurante);
     }
 
-    public static void adicionarPrato(Prato prato){
-        listaPratos.put(prato.getNome(), prato);
+    public static void removerRestaurante(Restaurante restaurante){
+        Iterator<Map.Entry<Integer, Restaurante>> iterator = listaRestaurantes.entrySet().iterator();
+        while (iterator.hasNext()) {
+            Map.Entry<Integer, Restaurante> entry = iterator.next();
+            if (entry.getKey() == restaurante.getId()) {
+                iterator.remove();
+                break;
+            }
+        }
+    }
+    public static Restaurante buscarRestaurante(int id){
+        for (Restaurante restaurante : listaRestaurantes.values()){
+            if (restaurante.getId() == id){
+                return restaurante;
+            }
+        }
+
+        return null;
     }
 
-    public static void adicionarPedido(Pedido pedido){
-        listaPedidos.add(pedido);
-    }
-
-    public static Map<String, Restaurante> getListaRestaurantes() {
+    public static Map<Integer, Restaurante> getListaRestaurantes() {
         return listaRestaurantes;
     }
 
-    public static Map<String, Prato> getListaPratos() {
-        return listaPratos;
-    }
+    public static List<Prato> listarPratosRestaurante(Integer id, String nome){
+        Restaurante restaurante = buscarRestaurante(id);
+        if (restaurante != null) {
+            List<Prato> pratos = restaurante.getPratosDisponiveis();
+            for (Prato prato : pratos) {
+                if (prato.getNome().equalsIgnoreCase(nome) && prato.getId() == id) {
+                    pratos.add(prato);
+                }
+            }
 
-    public static List<Pedido> getListaPedidos() {
-        return listaPedidos;
+            return pratos;
+        } else {
+            return null;
+        }
     }
 }
