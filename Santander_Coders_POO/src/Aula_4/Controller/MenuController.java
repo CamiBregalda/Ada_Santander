@@ -90,7 +90,6 @@ public class MenuController {
                     if (pratoLista != null) {
                         if (!pratosRestaurante.contains(pratoLista)) {
                             pratosRestaurante.add(pratoLista);
-                            System.out.println("Entrei :)");
                         } else {
                             System.out.println("Prato já cadastrado no restaurante!");
                         }
