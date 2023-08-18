@@ -41,7 +41,7 @@ public class MenuController {
             }
             switch (opcao) {
                 case 1:
-                    cadastrarRestaurante(); //Corrigir
+                    cadastrarRestaurante();
                     break;
                 case 2:
                     listarRestaurantes();
@@ -50,19 +50,19 @@ public class MenuController {
                     cadastrarPrato();
                     break;
                 case 4:
-                    listarPratosRestaurante(); //Corrigir
+                    listarPratosRestaurante();
                     break;
                 case 5:
-                    cadastrarPedido(); //Corrigir
+                    cadastrarPedido();
                     break;
                 case 6:
-                    listarPedidosRestaurante(); //Corrigir
+                    listarPedidosRestaurante();
                     break;
                 case 7:
-                    cadastrarCliente(); //Corrigir
+                    cadastrarCliente(); 
                     break;
                 case 8:
-                    verPedidosCliente(); //Corrigir
+                    verPedidosCliente();
                     break;
                 case 0:
                     return;
